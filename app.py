@@ -22,12 +22,12 @@ app.add_middleware(
 templates = Jinja2Templates(directory="public")
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
-@app.get('/draw')
+@app.get('/')
 async def index(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
-@app.get('/')
-def get_name():
-    return {'Welcome': 'Hello World,its siraj'}
+# @app.get('/')
+# def get_name():
+#     return {'Welcome': 'Hello World,its siraj'}
 
 
 @app.post('/predict')

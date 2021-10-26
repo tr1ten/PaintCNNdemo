@@ -68,12 +68,12 @@ def predict(encodedImage):
     image_np = np.array(image)
     # print(image_np.shape)
     resize_img =  resize_linear(image_np,28,28)
-    Image.fromarray(resize_img).show()
+    # Image.fromarray(resize_img).show()
     
     
     # Show the model architecture
     pred = model.predict(np.array([resize_img]))
-    print(sum(pred[0]),pred[0])
+    # print(sum(pred[0]),pred[0])
 
     return list(pred[0]).index(max(pred[0]))
 
