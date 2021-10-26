@@ -5,6 +5,9 @@ import numpy as np
 import math
 import tensorflow as tf
 import PIL.ImageOps
+# # Recreate the exact same model, including its weights and the optimizer
+model = tf.keras.models.load_model('modelv2.h5')
+
 def pure_pil_alpha_to_color_v2(image, color=(255, 255, 255)):
     """Alpha composite an RGBA Image with a specified color.
 
@@ -65,11 +68,9 @@ def predict(encodedImage):
     image_np = np.array(image)
     # print(image_np.shape)
     resize_img =  resize_linear(image_np,28,28)
-    # Image.fromarray(resize_img).show()
+    Image.fromarray(resize_img).show()
     
-    # # Recreate the exact same model, including its weights and the optimizer
-    model = tf.keras.models.load_model('modelv2.h5')
-
+    
     # Show the model architecture
     pred = model.predict(np.array([resize_img]))
     print(sum(pred[0]),pred[0])

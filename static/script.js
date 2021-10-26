@@ -33,7 +33,7 @@ window.addEventListener('load', () => {
     }
     function cDraw(event) {
         if (!drawing) return;
-        ctx.lineWidth = 10;
+        ctx.lineWidth = 20;
         ctx.lineCap = 'round';
         ctx.lineTo(event.clientX, event.clientY)
         ctx.stroke();
@@ -44,7 +44,7 @@ window.addEventListener('load', () => {
     }
     const draw = function(x, y){
         
-        ctx.lineWidth = 10;
+        ctx.lineWidth = 20;
         ctx.lineCap = 'round';
         ctx.lineTo(x, y)
         ctx.stroke();
